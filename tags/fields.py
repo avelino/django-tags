@@ -10,11 +10,11 @@ from tags.models import Tag
 @python_2_unicode_compatible
 class TagField(CharField):
     def __init__(self,
-                 verbose_name=_(u'Tags'),
+                 verbose_name=_('Tags'),
                  max_length=4000,
                  blank=True,
                  null=True,
-                 help_text=_(u'A comma-separated list of tags.'),
+                 help_text=_('A comma-separated list of tags.'),
                  **kwargs):
         kwargs['max_length'] = max_length
         kwargs['blank'] = blank
