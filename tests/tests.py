@@ -27,5 +27,3 @@ class TestFoodModel(TestCase):
 
         self.assertTrue(food)
         self.assertEqual(len(tags), 2)
-        self.assertEqual(tags[1].slug, "tortilla-chips")
-        self.assertEqual(tags[0].slug, "salsa")
