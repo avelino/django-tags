@@ -2,10 +2,12 @@
 # -*- coding: utf-8 -*-
 from django.db.models.fields import CharField
 from django.utils.translation import ugettext_lazy as _
+from django.utils.encoding import python_2_unicode_compatible
 
 from tags.models import Tag
 
 
+@python_2_unicode_compatible
 class TagField(CharField):
     def __init__(self,
                  verbose_name=_(u'Tags'),
