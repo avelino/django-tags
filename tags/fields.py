@@ -36,3 +36,10 @@ class TagField(CharField):
                 Tag.objects.get_or_create(name=tag)
             return ','.join(tags)
         return super(TagField, self).pre_save(model_instance, add)
+
+try:
+    from south.modelsinspector import add_introspection_rules
+    add_introspection_rules([], ["^tags\.fields\.TagField"])
+except:
+    pass
+
