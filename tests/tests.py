@@ -3,7 +3,10 @@ from __future__ import unicode_literals, absolute_import
 
 from django.test import TestCase
 
+from south.modelsinspector import introspector
+
 from tags.models import Tag
+from tags.fields import TagField
 
 from .models import Food
 
@@ -27,3 +30,11 @@ class TestFoodModel(TestCase):
 
         self.assertTrue(food)
         self.assertEqual(len(tags), 2)
+
+
+class TestField(TestCase):
+    def test_add_introspection_rules(self):
+        self.assertEqual(
+            introspector(
+                "{0}.{1}".format(TagField.__module__,
+                                 TagField.__name__)), ([], {}))
