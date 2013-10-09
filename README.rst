@@ -10,7 +10,7 @@ django-tags
 
     from django.db import models
 
-    from tags.field import TagField
+    from tags.fields import TagField
 
     class Food(models.Model):
         # ... fields here
